@@ -1,0 +1,312 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+ul{
+  list-style: none;
+}
+.background-footer{
+  background-color: #000000 !important;
+  color: white;
+}
+
+.background-footer li{
+  margin-top: 1%;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #fef8f8;
+}
+
+.cards {
+  padding: 0;
+  list-style-type: none;
+}
+
+
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 80%;
+  border-radius: calc(var(--curve) * 1px) !important;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0px 10px 10px -6px rgb(180, 163, 163);
+}
+.paddding-novedades{
+  padding-top: 5%  !important;
+}
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: calc(var(--curve) * 1px);
+  background-color: var(--surface-color);
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px !important;
+  height: 80px !important;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+}
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.card__title {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card__status {
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #D7BDCA;
+  font-family: "MockFlowFont";
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.wrapper {
+  margin-top: 2.5em;
+  margin-left: 10em;
+  display: flex;
+}
+
+.search_box {
+  background: #000000;
+  position: relative;
+  padding: 12px;
+  border-radius: 50px;
+  display: flex;
+}
+
+.search_box .search_btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #464444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.search_box .input_search {
+  outline: none;
+  border: 0;
+  background: #000000;
+  border-radius: 50px;
+  padding: 10px 15px;
+  width: 200px;
+  height: 50px;
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+.btnfilter-pelis {
+  color: #000000 !important;
+  background-color: none !important;
+  border-color: #000000 !important;
+  border-radius: 40px !important;
+  padding: 12px !important;
+  width: 6rem !important;
+}
+
+.btnfilter-pelis:hover {
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+.btnfilter-series {
+  color: #666464 !important;
+  background-color: none !important;
+  border-color: #666464 !important;
+  border-radius: 40px !important;
+  padding: 12px !important;
+  width: 5rem !important;
+}
+
+.btnfilter-series:hover {
+  background-color: #666464 !important;
+  color: white !important;
+}
+
+.big-card {
+  padding: 15px !important;
+}
+
+.big-card img {
+  border-radius: 1rem;
+  max-width: 100% !important;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  background-repeat: no-repeat;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin-left: 110px !important;
+  margin-right: 110px !important;
+  margin-top: 10rem !important;
+
+}
+
+.slide {
+  width: 20rem;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.slider::-webkit-scrollbar {
+    height: 8px;
+    margin-left: 30px;
+    float: left;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-top: 2rem;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+  margin-bottom: 4rem;
+  width: 10px;
+	background-color: #666464;
+}
+
+#styleScrollbar::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.slider::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+background-color: #F5F5F5;
+border-radius: 10px;
+}
+
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.slider::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+	background-color: #000000;
+
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.slider::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+  border-radius: 10px;
+	background-color: #000000;
+
+}
+
+
+.sl {
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+  margin-bottom: 200px !important; 
+}
