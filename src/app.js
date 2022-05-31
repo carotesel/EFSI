@@ -1,21 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar  from './components/navbar.js';
 import Footer from './components/footer.js';
-import CardSlider from './components/card-slider.js';
+import Slider from './components/card-slider.js';
 import axios from 'axios';
 
 
 const App = () => {
     let buscados = ["Mas Buscados", "Tendencias", "Solo Cines"];
+
+    const [popMov, setPopMov] = useState([]);
+    
+
+    const getPopularMovies = async () => {
+        const res = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=13d84b90cb476a717b73b72950066c86&language=en-US&page=1");
+        return res.data;
+    }
+
+    useEffect(()=>{
+        (async ()=>{
+          const movies = await getPopularMovies();
+          setPopMov(movies);
+          console.log(movies);
+        })();
+      }, []);
     
     return (
         <>
             <Navbar/>
-            {
-                buscados.map(buscado => (
-                    <CardSlider titulo={buscado} />
-                ))
-            }            
+            {popMov.results &&
+            
+            <Slider peliculas={popMov.results} />
+            }
+            
     
             <Footer/>
         </>
