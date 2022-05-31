@@ -8,7 +8,7 @@ import axios from 'axios';
 const App = () => {
     let buscados = ["Mas Buscados", "Tendencias", "Solo Cines"];
 
-    const [popMov, setPopMov] = useState([]);
+    const [popularMov, setPopularMov] = useState([]);
     
 
     const getPopularMovies = async () => {
@@ -19,7 +19,7 @@ const App = () => {
     useEffect(()=>{
         (async ()=>{
           const movies = await getPopularMovies();
-          setPopMov(movies);
+          setPopularMov(movies);
           console.log(movies);
         })();
       }, []);
@@ -27,9 +27,9 @@ const App = () => {
     return (
         <>
             <Navbar/>
-            {popMov.results &&
+            {popularMov.results &&
             
-            <Slider peliculas={popMov.results} />
+            <Slider peliculas={popularMov.results} />
             }
             
     
