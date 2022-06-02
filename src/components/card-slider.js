@@ -1,13 +1,16 @@
 import React from "react";
 import '../index.css';
 import Card from './card.js';
+import Filtro from './filtro.js';
 
 
-const Slider = ({peliculas}) => {
+const Slider = ({peliculas, tipoPelis}) => {
     return (
-        <div className="ml-5 sl mt-5 mb-5">
-             <h2>Hola</h2>
-            <div className="slider mb-4 ml-4 ml-5 mt-5">
+        <>
+        <h1 className="text-center">{tipoPelis}</h1>
+        <Filtro/>
+        <div className="ml-5 sl mt-1 mb-5">
+            <div className="slider mb-4 ml-4 ml-5">
                 {peliculas.map((peli) => {
                     return(
                         <Card peli = {peli}/> 
@@ -15,6 +18,7 @@ const Slider = ({peliculas}) => {
                 })}
             </div>
         </div>
+        </>
     )
 }
 export default Slider;
