@@ -2,58 +2,51 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './components/navbar.js';
 import Footer from './components/footer.js';
 import Slider from './components/card-slider.js';
-import axios from 'axios';
-import {getPopularMovies, getTrendingMovies, getUpcomingMovies} from './helper/fetch.js'
-
+import { getPopular, getTrending } from './helper/fetch.js';
 
 
 const App = () => {
 
     
-    const [popularMov, setPopularMov] = useState([]);
-    const [trendingMov, setTrendingMov] = useState([]);
-    const [upcomingMov, setUpcomingMov] = useState([]);
-
-
-    useEffect(() => {
-        (async () => {
-            const movies = await getPopularMovies();
-            setPopularMov(movies);
-        })();
-    }, []);
+    const [popular, setPopular] = useState([]);
+    const [trending, setTrending] = useState([]);
+    const [filtro, setFiltro] = useState('movie');
+   
 
     useEffect(() => {
         (async () => {
-            const movies = await getTrendingMovies();
-            setTrendingMov(movies);
+            const movies = await getPopular(filtro);
+            setPopular(movies);
         })();
-    }, []);
+    }, [filtro]);
 
     useEffect(() => {
         (async () => {
-            const movies = await getUpcomingMovies();
-            setUpcomingMov(movies);
-            console.log(movies);
+            const movies = await getTrending(filtro);
+            setTrending(movies);
         })();
-    }, []);
+    }, [filtro]);
+
+  
+    const handleFiltro = (value) => {  
+        console.log(value);
+        setFiltro(value);
+    }
+    
 
     return (
         <>
             <Navbar />
-            {popularMov.results &&
+            {popular.results &&
 
-                <Slider peliculas={popularMov.results} tipoPelis='Populares' />
+                <Slider peliculas={popular.results} tipoPelis='Populares' handleFiltro={handleFiltro}/>
             }
 
-            {trendingMov.results &&
+            {trending.results &&
 
-                <Slider peliculas={trendingMov.results} tipoPelis='En cartelera' />
+                <Slider peliculas={trending.results} tipoPelis='En cartelera' handleFiltro={handleFiltro} />
             }
 
-            {upcomingMov.results &&
-
-                <Slider peliculas={upcomingMov.results} tipoPelis='Próximamente' />
-            }
 
             <Footer />
         </>
