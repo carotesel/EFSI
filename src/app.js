@@ -44,7 +44,7 @@ const App = () => {
 
             {trending.results &&
 
-                <Slider peliculas={trending.results} tipoPelis='En cartelera' handleFiltro={handleFiltro} />
+                <Slider peliculas={trending.results} tipoPelis='Lo último' handleFiltro={handleFiltro} />
             }
 
 
