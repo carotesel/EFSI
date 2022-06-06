@@ -39,7 +39,7 @@ const App = () => {
             <Navbar />
             {popular.results &&
 
-                <Slider peliculas={popular.results} tipoPelis='Populares' handleFiltro={handleFiltro}/>
+                <Slider peliculas={popular.results} tipoPelis='Lo + popular' handleFiltro={handleFiltro}/>
             }
 
             {trending.results &&
