@@ -11,8 +11,8 @@ const App = () => {
     const [popular, setPopular] = useState([]);
     const [trending, setTrending] = useState([]);
 
-    const [popularActive, setPopularActive] = useState('tv')
-    const [trendingActive, setTrendingActive] = useState('tv')
+    const [popularActive, setPopularActive] = useState('movie')
+    const [trendingActive, setTrendingActive] = useState('movie')
 
     useEffect(() => {
         (async () => {

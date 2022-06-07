@@ -194,34 +194,6 @@ body {
   color: #fff;
 }
 
-.btnfilter-pelis {
-  color: #000000 !important;
-  background-color: none !important;
-  border-color: #000000 !important;
-  border-radius: 40px !important;
-  padding: 12px !important;
-  width: 6rem !important;
-}
-
-.btnfilter-pelis:hover {
-  background-color: #000000 !important;
-  color: white !important;
-}
-
-.btnfilter-series {
-  color: #666464 !important;
-  background-color: none !important;
-  border-color: #666464 !important;
-  border-radius: 40px !important;
-  padding: 12px !important;
-  width: 5rem !important;
-}
-
-.btnfilter-series:hover {
-  background-color: #666464 !important;
-  color: white !important;
-}
-
 .big-card {
   padding: 15px !important;
 }
@@ -313,9 +285,29 @@ border-radius: 10px;
 }
 
 .btnfilter-pelis-active {
-    background-color: blue;
+  color: white !important;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  border-radius: 40px !important;
+  padding: 12px !important;
+  width: 6rem !important;
 }
 
 .btnfilter-pelis-inactive {
-    background-color: aquamarine;
+  color: #666464 !important;
+  background-color: none !important;
+  border-color: #666464 !important;
+  border-radius: 40px !important;
+  padding: 12px !important;
+  width: 6rem !important;
+}
+
+.btnfilter-pelis-active:hover {
+  background-color: #464444!important;
+  color: white !important;
+}
+
+.btnfilter-pelis-inactive:hover {
+  background-color: #666464 !important;
+  color: white !important;
 }
