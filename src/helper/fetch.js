@@ -11,3 +11,11 @@ export const getTrending = async (filtro) => {
     const res = await axios.get(`https://api.themoviedb.org/3/trending/${filtro}/week?api_key=${apiKey}`);
     return res.data;
 }
+
+/*export const getMovieById = async (id) => {
+    const res = 
+} */
+
+/*export const getTvById = async (id) => {
+    const res = 
+} */

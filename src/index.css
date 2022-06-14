@@ -46,8 +46,9 @@ body {
   padding-top: 5%  !important;
 }
 .card__image {
-  width: 100%;
+  width: 90%;
   height: auto;
+  border-radius: 2.5rem;
 }
 
 .card__overlay {

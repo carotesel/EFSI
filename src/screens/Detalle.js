@@ -1,13 +1,20 @@
 import '../index.css';
+import { useParams } from 'react-router-dom';
 
 
-function detalles(){
+
+function Detalle(){
+
+  let { id } = useParams(); 
+
+  console.log(id);
+
     return(
         <div className="container mt-5 mb-5">
           <div className="card big-card mb-3">
         <div className="row g-0">
           <div className="col-md-4">
-            <img className="mt-3 ml-3 mr-3 mb-3 img-fluid rounded-start" src="https://resizer.glanacion.com/resizer/QX8tTGiMmXDjrqOvTcSsO5ydJFM=/768x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/WOCVYI6EYBCQLBCDDOBA4R44CQ.jpg"  alt="..." style="max-width: 400px;"/>
+            <img className="mt-3 ml-3 mr-3 mb-3 img-fluid rounded-start" src="https://resizer.glanacion.com/resizer/QX8tTGiMmXDjrqOvTcSsO5ydJFM=/768x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/WOCVYI6EYBCQLBCDDOBA4R44CQ.jpg"  alt="..."/>
           </div>
           <div className="col-md-8">
             <div className="card-body mt-3">
@@ -23,3 +30,5 @@ function detalles(){
       </div>
     );
 }
+
+export default Detalle;
