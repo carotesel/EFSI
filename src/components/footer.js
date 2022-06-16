@@ -1,6 +1,6 @@
 import '../index.css';
 
-function footer(){
+function Footer(){
     return(
         <div className="container-fluid text-center background-footer">
             <div className="row">
@@ -45,4 +45,4 @@ function footer(){
     );
 }
 
-export default footer;
+export default Footer;

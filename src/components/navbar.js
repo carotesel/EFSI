@@ -1,6 +1,6 @@
 import '../index.css';
 
-function navbar() {
+function Navbar() {
     return (
         <div className='wrapper ml-5'>
             <div className='search_box'>
@@ -14,4 +14,4 @@ function navbar() {
         </div>
     );
 }
-export default navbar;
+export default Navbar;
