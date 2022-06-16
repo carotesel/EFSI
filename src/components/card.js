@@ -9,7 +9,7 @@ const Card = ({peli,filtro}) => {
       <Link to={`/${filtro}/${peli.id}`}>
       <img src={`https://image.tmdb.org/t/p/w220_and_h330_face${peli.poster_path}`}  className="card__image" alt="" />      
       </Link>
-    <h3 className="card__title mt-3 ml-2">{peli.title}</h3>  
+    <h3 className="card__title mt-3 ml-2">{peli.title || peli.name}</h3>  
 </div>
   );
 }
