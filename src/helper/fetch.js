@@ -13,7 +13,7 @@ export const getTrending = async (filtro) => {
 }
 
 export const getById = async (id, category) => {
-    const res = await axios.get(`https://api.themoviedb.org/3/${category}/${id}?api_key=${apiKey}&language=en-US`);
+    const res = await axios.get(`https://api.themoviedb.org/3/${category}/${id}?api_key=${apiKey}&language=es`);
     return res.data;
 } 
 
