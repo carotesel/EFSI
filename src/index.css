@@ -30,7 +30,62 @@ body {
   list-style-type: none;
 }
 
+.vista-general{
+  color:black;
+}
+.img-expand:hover{
+  transition: 1s;
+  width: 10%;
+}
+.hover13 figure:hover img {
+	opacity: 1;
+	-webkit-animation: flash 3s;
+	animation: flash 3s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.img-position{
+  margin-left: 1% !important;
+  margin-top: 1%;
+}
+.font-info{
+  font-weight: bold;
+}
 
+@media only screen and (min-width: 800px) {
+  .img-position {
+    margin-left: 20% !important;
+    margin-top: 10%;
+  }
+}
+@media only screen and (max-width:800px){
+  .img-position{
+    margin-top: 24% !important;
+    margin-left: 20% !important;
+  }
+}
+
+
+
+
+.vista-general:hover{
+  transition: 1.5s;
+  color: gray;
+}
 
 .card {
   position: relative;
