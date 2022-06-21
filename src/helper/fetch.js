@@ -17,3 +17,12 @@ export const getById = async (id, category) => {
     return res.data;
 } 
 
+export const searchData = async (input) => {
+    const m = []
+    const movies = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${input}&page=1`);
+    const series = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${input}&page=1`);
+    m.push(movies.data)
+    m.push(series.data)
+    return m;
+}
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './app.js';
+import App from './App.js';
 import Detalle from './screens/Detalle.js';
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";

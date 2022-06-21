@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
 import Slider from './components/Slider.js';
-import { getPopular, getTrending } from './helper/fetch.js';
+import { getPopular, getTrending, searchData } from './helper/fetch.js';
 
 
 const App = () => {
@@ -13,6 +13,8 @@ const App = () => {
 
     const [popularActive, setPopularActive] = useState('movie')
     const [trendingActive, setTrendingActive] = useState('movie')
+
+    const [find, setFind] = useState('');
 
     useEffect(() => {
         (async () => {
@@ -28,6 +30,18 @@ const App = () => {
         })();
     }, [trendingActive]);
 
+   const handleInput = (e) => {
+        setFind(e.target.value);
+    }
+
+    const handleSearch = async () => {
+        const result = await searchData(find);  
+        console.log(result);
+    }
+
+    
+    console.log(find);
+
     const handleFiltro = (value, filter) => {
         console.log(value);
         // setFiltro(value);
@@ -38,7 +52,7 @@ const App = () => {
 
     return (
         <>
-            <Navbar />
+            <Navbar handleInput={handleInput} handleSearch={handleSearch}/>
             {popular.results &&
 
                 <Slider peliculas={popular.results} tipoPelis='Lo + popular' handleFiltro={handleFiltro} active={popularActive} type='popular' />
