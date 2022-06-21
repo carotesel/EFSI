@@ -36,6 +36,7 @@ console.log(item);
           <div className="col-md-8">
             <div className="card-body mt-3">
               <h3 className="card-title ml-4 font-info">{item.original_title}{item.name}</h3>
+              <h5 className="card-title  mt-3 ml-4 font-info"><i>{item.tagline}</i></h5>
               <h6 className="card-title ml-4 font-info">Genero:    {item.genres.map(genre => genre.name).join(",  ")}</h6>
               <p className="card-text ml-4 mt-4 vista-general font-info" >Vista General: {item.overview}</p>
               <p className="card-text ml-4 mt-4 vista-general font-info">Puntuación: {item.vote_average}</p>
