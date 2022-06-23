@@ -9,7 +9,7 @@ import '../index.css';
 
 
 function Detalle(){
-  let { id,category } = useParams(); 
+  let { id, category } = useParams(); 
   const [item, setItem] = useState(null);
   
   useEffect(() => {
@@ -29,7 +29,7 @@ console.log(item);
           <div className="col-md-4">
             <div class="hover13 column">
                 <div>
-                  <figure><img className='img-position' src={`https://image.tmdb.org/t/p/w220_and_h330_face${item.poster_path}`}></img></figure>
+                  <figure><img className='img-position' alt='fotoDetalle' src={`https://image.tmdb.org/t/p/w220_and_h330_face${item.poster_path}`}></img></figure>
                 </div>
             </div>
           </div>
