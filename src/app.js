@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
 import Slider from './components/Slider.js';
 import { getPopular, getTrending, searchData } from './helper/fetch.js';
 import Card from './components/Card.js';
+import './index.css';
 
 
 const App = () => {
@@ -34,17 +35,17 @@ const App = () => {
         })();
     }, [trendingActive]);
 
-   const handleInput = (e) => {
+    const handleInput = (e) => {
         setFind(e.target.value);
     }
 
     const handleSearch = async () => {
-        const result = await searchData(find);  
+        const result = await searchData(find);
         setSearchMovies(result[0].results)
         setSearchSeries(result[1].results);
     }
 
-    
+
     console.log(find);
 
     const handleFiltro = (value, filter) => {
@@ -54,30 +55,40 @@ const App = () => {
             filter === 'trending' && setTrendingActive(value)
     }
 
+    const handleGetBack = () => {
+        setSearchMovies([]); 
+        console.log(searchMovies);
+    document.getElementById("limpiar_input").value="";
+    }
+
     return (
         <>
-            <Navbar handleInput={handleInput} handleSearch={handleSearch}/>
+            <Navbar handleInput={handleInput} handleSearch={handleSearch} />
+            
 
             {
                 (searchMovies.length >= 1) ? (
+                    
                     <>
+                        <button onClick={handleGetBack} className="button-style"><img src="https://i.pinimg.com/originals/f4/7f/d1/f47fd1fdc887f5cec9f3f2318c3c8313.png" className="house-style"></img></button>
+                        
                         <div className="ml-5 sl mt-1 mb-5">
-                            <h2>Peliculas</h2>
+                            <h1 className="mt-5 text-center">Peliculas</h1>
                             <div className="slider mb-4 ml-4 ml-5">
                                 {searchMovies.map((peli) => {
                                     return (
-                                        <Card peli={peli} filtro='movie'/>
+                                        <Card peli={peli} filtro='movie' />
                                     )
                                 })}
                             </div>
                         </div>
 
                         <div className="ml-5 sl mt-1 mb-5">
-                            <h2>Movies</h2>
+                            <h1 className="mt-5 text-center">Series</h1>
                             <div className="slider mb-4 ml-4 ml-5">
                                 {searchSeries.map((serie) => {
                                     return (
-                                        <Card peli={serie} filtro='tv'/>
+                                        <Card peli={serie} filtro='tv' />
                                     )
                                 })}
                             </div>
@@ -85,18 +96,18 @@ const App = () => {
                     </>
                 ) : (
 
-                    <>
-                        {popular.results &&
-            
-                            <Slider peliculas={popular.results} tipoPelis='Lo + popular' handleFiltro={handleFiltro} active={popularActive} type='popular' />
-                        }
-            
-                        {trending.results &&
-            
-                            <Slider peliculas={trending.results} tipoPelis='Lo último' handleFiltro={handleFiltro} active={trendingActive} type='trending' />
-                        }
-                    </>
-                )
+                        <>
+                            {popular.results &&
+
+                                <Slider peliculas={popular.results} tipoPelis='Lo + popular' handleFiltro={handleFiltro} active={popularActive} type='popular' />
+                            }
+
+                            {trending.results &&
+
+                                <Slider peliculas={trending.results} tipoPelis='Lo último' handleFiltro={handleFiltro} active={trendingActive} type='trending' />
+                            }
+                        </>
+                    )
 
             }
 

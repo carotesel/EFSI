@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
 import { getById } from '../helper/fetch';
 import '../index.css';
+import Footer from '../components/Footer';
 
 
 
@@ -45,6 +46,8 @@ console.log(item);
         </div>
       </div>
       </div>
+      <Footer />
+
       </>
     );
 }

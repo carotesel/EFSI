@@ -19,6 +19,14 @@ ul{
 .background-footer li{
   margin-top: 1%;
 }
+.house-style{
+  width: 40px !important;
+}
+.button-style{
+  margin-left: 90%;
+  border-color: transparent;
+  background-color: transparent;
+}
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -237,6 +245,16 @@ body {
   height: 50px;
   color: #fff;
 }
+
+#limpiar_input{
+  outline: none;
+  border: 0;
+  background: #000000;
+  border-radius: 50px;
+  padding: 10px 15px;
+  width: 200px;
+  height: 50px;
+  color: #fff;}
 
 ::placeholder {
   color: #fff;

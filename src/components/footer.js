@@ -16,7 +16,7 @@ function Footer(){
                 <div className="col-md-3 col-12">
                         <h4 className="mt-4">Participa</h4>
                         <ul>
-                            <li>Guia de aportaciones</li>
+                            <li>Guia de aportes</li>
                             <li>Añadir nueva pelicula</li>
                             <li>Añadir nuevo programa</li>
                             <li className="mb-4">Twitter</li>
