@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar.js';
-import Footer from './components/Footer.js';
+import Navbar from './components/navbar.js';
+import Footer from './components/footer.js';
 import Slider from './components/Slider.js';
 import { getPopular, getTrending } from './helper/fetch.js';
 

@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import '../index.css';
-import Card from './Card.js';
-import Filtros from './Filtros.js'
+import Card from './card.js';
+import Filtros from './filtros.js'
 
 const Slider = ({ peliculas, tipoPelis, handleFiltro, active, type }) => {
     const [filtro,setFiltro] = useState('movie');

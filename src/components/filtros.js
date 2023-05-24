@@ -1,5 +1,5 @@
 import React from 'react'
-import Filter from './Filter.js';
+import Filter from './filter.js';
 
 const Filtros = ({ handleFiltro, active, type, setFiltro }) => {
 
